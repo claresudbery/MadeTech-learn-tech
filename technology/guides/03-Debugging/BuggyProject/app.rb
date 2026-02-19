@@ -1,9 +1,10 @@
 require 'sinatra'
 require 'redcarpet'
+require_relative 'lib/list_topics'
 require_relative 'lib/view_topic'
 
 get '/' do
-  response = ViewTopic.new.execute(directory: "#{__dir__}/../../")
+  response = ListTopics.new.execute(directory: "#{__dir__}/../../")
 
   output = '<h1>Learning Topics</h1>'
   output << '<ul>'

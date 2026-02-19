@@ -74,8 +74,9 @@ Use the `make` utility to run it in the browser:
 - To see results of code changes, you might have to run Ctrl+C and then `make serve` again, then refresh browser.
 
 Use the `make` utility to run the tests: 
-- `make test` on command line 
-- Look at `Makefile` to see what this does. 
+- `make test` on command line to have tests running constantly in background
+  - Look at `Makefile` to see what this does. 
+- ...or use `bundle exec rspec` on command line to run tests manually
 - Fix the code as you see fit.
 
 ### Make?

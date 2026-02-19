@@ -3,7 +3,7 @@ require 'redcarpet'
 require_relative 'lib/view_topic'
 
 get '/' do
-  response = List.new.execute(directory: "#{__dir__}/../../")
+  response = ViewTopic.new.execute(directory: "#{__dir__}/../../")
 
   output = '<h1>Learning Topics</h1>'
   output << '<ul>'

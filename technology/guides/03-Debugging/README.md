@@ -66,9 +66,17 @@ Read the contents of the project and understand its purpose. _Hint: start with t
 
 Run `bundle install` to install all dependencies (see Troubleshooting section below).
 
-Use the `make` utility to run it in the browser (`make serve` on command line, and then check terminal for port number - eg if port=4567, use url `localhost:4567` in browser). Fix any bugs that prevent it from loading (errors you see in the browser will give you clues here).
+Use the `make` utility to run it in the browser:
+- `make serve` on command line, and then check terminal for port number 
+- eg if port=4567, use url `localhost:4567` in browser. 
+- Fix any bugs that prevent it from loading.
+- Errors you see in the browser will give you clues here.
+- To see results of code changes, you might have to run Ctrl+C and then `make serve` again, then refresh browser.
 
-Use the `make` utility to run the tests (`make test` on command line - Look at `Makefile` to see what this does). Fix the code as you see fit.
+Use the `make` utility to run the tests: 
+- `make test` on command line 
+- Look at `Makefile` to see what this does. 
+- Fix the code as you see fit.
 
 ### Make?
 

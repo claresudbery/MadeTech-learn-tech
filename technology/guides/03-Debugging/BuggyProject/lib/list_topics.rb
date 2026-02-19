@@ -1,6 +1,6 @@
 class ListTopics
   def execute(directory:)
-    @directories = Dir.glob("#{directory}/**/README")
+    @directories = Dir.glob("#{directory}/**/README.md")
 
     return { topics: [] } if @directories.empty?
 

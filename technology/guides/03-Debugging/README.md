@@ -12,9 +12,9 @@ and share ideas when working through the exercises, two heads are better
 than one!  
 
 Make sure you have the `make` utility installed:
- - On MacOS you'll need to install Xcode Command Line Tools you can do this 
+ - On MacOS, you'll need to install Xcode Command Line Tools (which includes the `make` utility). You can do this 
  by entering the command `xcode-select --install`
- - On Ubuntu GNU Make is bundled as part of the Build Essentials package,
+ - On Ubuntu GNU, `make` is bundled as part of the Build Essentials package,
   you can install this by entering the command
   `sudo apt-get install build-essential`
 
@@ -62,11 +62,13 @@ think about the assumptions you're making and test them one by one.
 
 Open "[BuggyProject](https://github.com/madetech/learn/tree/master/technology/guides/03-Debugging/BuggyProject)" up in a text editor
 
-Read the contents of the project and understand it's purpose. _Hint: start with the tests._
+Read the contents of the project and understand its purpose. _Hint: start with the tests (in the `spec` folder)._
 
-Use Make to run it in the browser. Fix any bugs that prevent it from loading.
+Run `bundle install` to install all dependencies (see Troubleshooting section below).
 
-Use Make to run the tests, fix the code as you see fit.
+Use the `make` utility to run it in the browser (Hint: Look at `Makefile`, and choose which of the two configured commands to use). Fix any bugs that prevent it from loading.
+
+Use the `make` utility to run the tests (Hint: Look at `Makefile`, and choose which of the two configured commands to use). Fix the code as you see fit.
 
 ### Make?
 
@@ -98,3 +100,18 @@ Identify some methods of debugging errors in production applications.
 - [The Stack Trace](http://railscasts.com/episodes/24-the-stack-trace)
 - [Pry Cheat Sheet](https://gist.github.com/lfender6445/9919357)
 - [A Comprehensive Guide To Debugging Rails](http://www.jackkinsella.ie/articles/a-comprehensive-guide-to-debugging-rails)
+
+# Troubleshooting
+
+## bundle install with Apple Silicon
+
+I had trouble with `bundle install` on 19 Feb '26. Got the following error:
+
+```
+An error occurred while installing ffi (1.9.25), and Bundler cannot continue.
+Make sure that `gem install ffi -v '1.9.25' --source 'https://rubygems.org/'` succeeds before bundling.
+```
+
+Following the `gem install ffi` instructions didn't work, probably because Apple Silicon.
+On M1/M2 you may need x86_64 build for old native gems. Tried this instead: `sudo arch -x86_64 gem install ffi -v '1.9.25'`
+Then ran `bundle install` again.
